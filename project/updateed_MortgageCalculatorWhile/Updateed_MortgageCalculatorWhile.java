@@ -6,17 +6,48 @@ public class Updateed_MortgageCalculatorWhile {
     public static void main (String[] args) {
         
         Scanner scanner = new Scanner(System.in);
-        System.out.print(" enter your salary :");
-        double salary = scanner.nextDouble();
-        System.out.print(" enter you credit score rage 0 to 500 :");
-        int creditScore = scanner.nextInt();
-        System.out.print("have you any criminal record? true/false :");
-        boolean criminalrecord = scanner.nextBoolean();
 
-        if(salary>40000 && creditScore>=0 && creditScore<=500 && !criminalrecord){
-            if(creditScore>=300 && creditScore<500){
-            
-            System.out.print("Input loan amount:");
+        while(true){
+            System.out.print(" enter your salary :");
+            if(scanner.hasNextDouble()){
+                 double salary = scanner.nextDouble();
+                 if(salary>=40000){
+                    break; 
+                }
+                 else{ System.out.println("your salary is low it must be >=40000");}
+            }
+            else{
+                System.out.println("Invalid input. Please enter a numeric/number value for salary.");
+               
+            }
+        }
+        while(true){
+            System.out.print(" enter you credit score rage 0 to 500 :");
+            if(scanner.hasNextInt()){
+                 int creditScore = scanner.nextInt();
+                 if(creditScore>=0 && creditScore<=500){
+                    break;
+                 }
+                 else{ System.out.println("your credit score is out of range it must be between 0 to 500");}
+            }
+                 
+            else{
+                System.out.println("Invalid input. Please enter an integer value for credit score."); }
+            }
+        while(true){
+            System.out.print("have you any criminal record? true/false :");
+            if(scanner.hasNextBoolean()){
+                 boolean criminalrecord = scanner.nextBoolean();
+                 if(!criminalrecord){
+                    break;
+                 }
+                    else{ System.out.println("you are not eligible for loan due to criminal record");}
+            }
+            else{
+                System.out.println("Invalid input. Please enter true or false for criminal record.");
+            }
+        }
+           System.out.print("Input loan amount:");
             double p = scanner.nextDouble();
             System.out.print("Input loan interest:");
             double r = scanner.nextDouble();
@@ -33,15 +64,9 @@ public class Updateed_MortgageCalculatorWhile {
             NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(bdlocal);
             String mortgagePaymentFormatted = currencyFormatter.format(mortgage_Pamyent);
 
-              System.out.println("mortgage_Pamyent= " + mortgagePaymentFormatted);}
-            else{
-                System.out.println("your credit score is low it must be >=300");}
-        } 
-        
-        else{
-            System.out.println("you are not eligible for loan");
-        }
-    scanner.close();
+              System.out.println("mortgage_Pamyent= " + mortgagePaymentFormatted);
+           
+             scanner.close();
     }
 
 }
