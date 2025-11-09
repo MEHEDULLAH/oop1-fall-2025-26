@@ -1,4 +1,4 @@
-public class Good {
+public class StringTask {
     public static void main(String[] args) {
         // task1
         String firstName = "ortho";
