@@ -12,15 +12,14 @@ public class Updateed_MortgageCalculatorWhile {
             if(scanner.hasNextDouble()){
                  double salary = scanner.nextDouble();
                  if(salary>=40000){
-                    break; 
+                   break ;
                 }
                  else{ System.out.println("your salary is low it must be >=40000");}
-            }
-            else{
-                System.out.println("Invalid input. Please enter a numeric/number value for salary.");
-               
-            }
+                }
+            else{System.out.println("Invalid input. Please enter a numeric/number value for salary.");
+            scanner.next();
         }
+        } 
         while(true){
             System.out.print(" enter you credit score rage 0 to 500 :");
             if(scanner.hasNextInt()){
@@ -29,10 +28,12 @@ public class Updateed_MortgageCalculatorWhile {
                     break;
                  }
                  else{ System.out.println("your credit score is out of range it must be between 0 to 500");}
+                 
             }
                  
-            else{
-                System.out.println("Invalid input. Please enter an integer value for credit score."); }
+            else{System.out.println("Invalid input. Please enter an integer value for credit score.");
+            scanner.next();
+        }
             }
         while(true){
             System.out.print("have you any criminal record? true/false :");
@@ -42,9 +43,10 @@ public class Updateed_MortgageCalculatorWhile {
                     break;
                  }
                     else{ System.out.println("you are not eligible for loan due to criminal record");}
-            }
+                }
             else{
                 System.out.println("Invalid input. Please enter true or false for criminal record.");
+                scanner.next();
             }
         }
            System.out.print("Input loan amount:");
