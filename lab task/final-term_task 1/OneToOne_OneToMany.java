@@ -16,7 +16,7 @@ class School {
 
     public School(String schoolName, int numberOfstudents) {
         this.schoolName = schoolName;
-        this.students = new Student[numberOfstudents]; // fixed-size array
+        this.students = new Student[numberOfstudents]; 
     }
 
     public void addstudent(Student student) {
@@ -49,11 +49,10 @@ class Contact {
     }
 }
 
-// -------------------- CUSTOMER --------------------
+
 class StuDent{
     private String name;
-    private Contact contactnumber; // Customer HAS an Address
-
+    private Contact contactnumber; 
     public StuDent(String name, Contact contactnumber) {
         this.name = name;
         this.contactnumber = contactnumber;
@@ -69,15 +68,15 @@ class StuDent{
 public class OneToOne_OneToMany {
     public static void main(String[] args) {
 
-        // ----------- Relationship 1: State has many Cities ----------
-        School s = new School("Californiaschool", 3); // we expect 3 cities
+        
+        School s = new School("Californiaschool", 3);
         s.addstudent(new Student("Los Angeles"));
         s.addstudent(new Student("San Diego"));
         s.addstudent(new Student("San Francisco"));
 
         s.showstudents();
 
-        // ----------- Relationship 2: Customer has an Address ----------
+       
         Contact c = new Contact("123-456-7890");
         StuDent s1 = new StuDent("John Doe", c);
         s1.showstudentInfo();
